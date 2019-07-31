@@ -1,10 +1,10 @@
 ---
-- name: Install docker
+- name: "[ASKI]"
   hosts: web
   remote_user: bob
 
   tasks:
-    - name: install prerequisites
+    - name: "[ASKI] --install prerequisites"
       become: yes
       apt:
  #        become: yes 
@@ -13,21 +13,25 @@
  #       name: apt-transport-https
  #       name: ca-certificates
  #      update_cache: yes 
-    - name: Add Docker GPG key
+    - name: "[ASKI] --Add Docker GPG key"
       become: yes
       apt_key: url=https://download.docker.com/linux/ubuntu/gpg
 
-    - name: Add Docker APT repository
+    - name: "[ASKI] --Add Docker APT repository"
       become: yes
       apt_repository:
          repo: deb [arch=amd64] https://dowload.docker.com/linux/{{ansible_distribution|lower}} {{ansible_distribution_release}} stab
 
-    - name: Install Docker
+    - name: "[ASKI] Install Docker"
       become: yes
       apt: 
         name: docker.io
 #        state: latest
 #        update_cache: yes  
 
-
+    - name: "[ASKI] -- Copy file"
+      become: yes 
+      copy: 
+        src: ~/monfichier.txt
+        dest: /tmp/     
 ...
