@@ -1,0 +1,6 @@
+---    
+- name: "[ASKI] -- Copy file"
+  become: yes 
+  copy: 
+    src: ~/monfichier.txt
+    dest: /tmp/
