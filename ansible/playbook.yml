@@ -5,6 +5,7 @@
   roles: 
     - copy
     - docker
+    - nginx
 
   tasks:
  #   - name: name=copy

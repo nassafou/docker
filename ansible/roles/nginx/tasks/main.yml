@@ -1,0 +1,5 @@
+---
+ - name: "[ASKI] install nginx"
+   become: yes
+   apt: name=nginx state=latest 
+     
